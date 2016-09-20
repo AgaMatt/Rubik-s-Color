@@ -21,3 +21,6 @@ C:\Users\User\Dropbox\ALO COMPONOT\Motores\Rubik's Cube\Temp\bin\Debug\UnityEngi
 C:\Users\User\Dropbox\ALO COMPONOT\Motores\Rubik's Cube\Temp\bin\Debug\UnityEngine.Analytics.xml
 C:\Users\User\Dropbox\ALO COMPONOT\Motores\Rubik's Cube\obj\Debug\Assembly-CSharp.dll
 C:\Users\User\Dropbox\ALO COMPONOT\Motores\Rubik's Cube\obj\Debug\Assembly-CSharp.pdb
+D:\Program Files (x86)\Documentos\Facul\Motores\Rubik-s-Color\Rubik's Cube_alo\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
+D:\Program Files (x86)\Documentos\Facul\Motores\Rubik-s-Color\Rubik's Cube_alo\obj\Debug\Assembly-CSharp.dll
+D:\Program Files (x86)\Documentos\Facul\Motores\Rubik-s-Color\Rubik's Cube_alo\obj\Debug\Assembly-CSharp.pdb
