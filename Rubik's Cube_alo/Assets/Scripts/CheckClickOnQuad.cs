@@ -10,7 +10,7 @@ public class CheckClickOnQuad : MonoBehaviour {
 	
 	// Update is called once per frame
 	void OnMouseDown () {
-		Debug.Log (gameObject.name);
+		//Debug.Log (gameObject.name);
 	}
 
 	void OnMouseDrag()
