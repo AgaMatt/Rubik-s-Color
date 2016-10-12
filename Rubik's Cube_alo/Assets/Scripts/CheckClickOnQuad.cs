@@ -3,11 +3,14 @@ using System.Collections;
 
 public class CheckClickOnQuad : MonoBehaviour {
 	public MoveTheCube moveCube;
+	public StartPaused depoisStart;
+	MeshRenderer corQuad;
 	Color quadColor;
 	Color blue, orange, yellow, green, white, red;
 	public static bool canPaint;
 	// Use this for initialization
 	void Start () {
+
 		canPaint = true;
 		blue = new Color(0,53,255,255);
 		orange = new Color ( 255,133,1,255);
@@ -21,17 +24,18 @@ public class CheckClickOnQuad : MonoBehaviour {
 	
 	// Update is called once per frame
 	void OnMouseDown () {
-		//Debug.Log (gameObject.name)
-		quadColor = GetComponent<MeshRenderer> ().material.color;
-		if(quadColor == ClickSquare.selectedColor){
+		if (depoisStart.depoisDoStart) {
+			//Debug.Log (gameObject.name)
+			quadColor = GetComponent<MeshRenderer> ().material.color;
+			if (quadColor == ClickSquare.selectedColor) {
 			
-		}
-		if (canPaint) {
-			GetComponent<MeshRenderer> ().material.color = ClickSquare.selectedColor;
-			canPaint = false;
-		}
+			}
+			if (canPaint) {
+				GetComponent<MeshRenderer> ().material.color = ClickSquare.selectedColor;
+				canPaint = false;
+			}
 
-
+		}
 	}
 
 	void OnMouseDrag()
