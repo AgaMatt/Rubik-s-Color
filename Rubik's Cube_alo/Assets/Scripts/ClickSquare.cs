@@ -9,6 +9,7 @@ public class ClickSquare : MonoBehaviour {
 	void Start () {
 		podeComecar = GameObject.FindObjectOfType<StartPaused> ();
 		CheckClickOnQuad.canPaint = true;
+		CheckClickOnQuad.alrdyHaveColor = false;
 	}
 	
 	// Update is called once per frame
@@ -17,14 +18,13 @@ public class ClickSquare : MonoBehaviour {
 	}
 
 	void OnMouseDown () {
-		if (CheckClickOnQuad.canPaint) {
-			//print ("N TA INDO square");
+		if (CheckClickOnQuad.alrdyHaveColor == false) {
 			selectedColor = GetComponent<SpriteRenderer> ().color;
 			Destroy (gameObject);
 			podeComecar.depoisDoStart = true;
+			CheckClickOnQuad.canPaint = true;
+			CheckClickOnQuad.alrdyHaveColor = true;
 		}
-		CheckClickOnQuad.canPaint = true;
-
 
 
 

@@ -7,7 +7,7 @@ public class CheckClickOnQuad : MonoBehaviour {
 	MeshRenderer corQuad;
 	Color quadColor;
 	Color blue, orange, yellow, green, white, red;
-	public static bool canPaint;
+	public static bool canPaint, alrdyHaveColor;
 	// Use this for initialization
 	void Start () {
 
@@ -28,11 +28,12 @@ public class CheckClickOnQuad : MonoBehaviour {
 			//Debug.Log (gameObject.name)
 			quadColor = GetComponent<MeshRenderer> ().material.color;
 			if (quadColor == ClickSquare.selectedColor) {
-			
+				
 			}
-			if (canPaint) {
+			if (canPaint && quadColor != ClickSquare.selectedColor	) {
 				GetComponent<MeshRenderer> ().material.color = ClickSquare.selectedColor;
 				canPaint = false;
+				alrdyHaveColor = false;
 			}
 
 		}
