@@ -9,7 +9,7 @@ public class ClickSquare : MonoBehaviour {
 	void Start () {
 		podeComecar = GameObject.FindObjectOfType<StartPaused> ();
 		CheckClickOnQuad.canPaint = true;
-		CheckClickOnQuad.alrdyHaveColor = false;
+		//print (CheckClickOnQuad.alrdyHaveColor);
 	}
 	
 	// Update is called once per frame

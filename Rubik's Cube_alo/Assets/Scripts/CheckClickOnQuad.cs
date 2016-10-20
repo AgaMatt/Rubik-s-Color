@@ -10,7 +10,9 @@ public class CheckClickOnQuad : MonoBehaviour {
 	public static bool canPaint, alrdyHaveColor;
 	// Use this for initialization
 	void Start () {
-
+		
+		alrdyHaveColor = false;
+		//print (alrdyHaveColor + "check");
 		canPaint = true;
 		blue = new Color(0,53,255,255);
 		orange = new Color ( 255,133,1,255);
