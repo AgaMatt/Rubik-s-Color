@@ -12,6 +12,7 @@ public class WinCondition : MonoBehaviour {
 	public int rightCount, leftCount, upCount, downCount, frontCount, backCount;
 	Color cBlue, cYellow, cRed, cWhite, cOrange, cGreen, colorZ, colorX, colorC, colorV, colorB, colorN;
 	List<GameObject> frontList, backList, upList, downList, leftList, rightList;
+	WinScreen winScreen;
 
 	void Start()
 	{
@@ -21,7 +22,7 @@ public class WinCondition : MonoBehaviour {
 		downList = new List<GameObject> ();
 		leftList = new List<GameObject> ();
 		rightList = new List<GameObject> ();*/
-
+		winScreen = GameObject.FindObjectOfType<WinScreen> ();
 		rightColor = new Color[9];
 		leftColor = new Color[9];
 		upColor = new Color[9];
@@ -141,7 +142,7 @@ public class WinCondition : MonoBehaviour {
 		if (colorZ != colorX && colorZ != colorC && colorZ != colorV && colorZ != colorB && colorZ != colorN) {
 			for (int i = 0; i < 9; i++) {
 				if (rightColor [i] == colorZ) {
-					rightCount++;
+					rightCount ++;
 					//print ("tudo certo Right");
 				} else
 					rightCount = 0;
@@ -151,7 +152,7 @@ public class WinCondition : MonoBehaviour {
 			if(colorX != colorZ && colorX != colorC && colorX != colorV && colorX != colorB && colorX != colorN){
 				for(int i =0; i < 9; i++){
 				if (leftColor [i] == colorX) {
-					leftCount++;
+					leftCount ++;
 					//print ("tudo certo Left");
 				} else
 					leftCount = 0;
@@ -162,7 +163,7 @@ public class WinCondition : MonoBehaviour {
 		if(colorC != colorX && colorC != colorZ && colorC != colorV && colorC != colorB && colorC != colorN){
 			for(int i =0; i < 9; i++){
 				if (upColor [i] == colorC) {
-					upCount++;
+					upCount ++;
 					//print ("tudo certo Up");
 				} else
 					upCount = 0;
@@ -173,20 +174,19 @@ public class WinCondition : MonoBehaviour {
 			for(int i =0; i < 9; i++){
 				if(downColor[i] == colorV)
 				{
-					downCount++;
+					downCount ++;
 				//	print ("tudo certo Down");
 				}else
-				downCount = 0;
+					downCount = 0;
 			}
 		}
 
 		if(colorB != colorX && colorB != colorC && colorB != colorV && colorB != colorZ && colorB != colorN){
 			for(int i =0; i < 9; i++){
-				if(frontColor[i] == colorB)
-				{
-					frontCount++;
+				if (frontColor [i] == colorB) {
+					frontCount ++;
 					//print ("tudo certo Front");
-				}else
+				} else
 					frontCount = 0;
 			}
 		}
@@ -194,11 +194,15 @@ public class WinCondition : MonoBehaviour {
 		if(colorN != colorX && colorN != colorC && colorN != colorV && colorN != colorB && colorN != colorZ){
 			for(int i =0; i < 9; i++){
 				if (backColor [i] == colorN) {
-					backCount++;
+					backCount ++;
 					//print ("tudo certo Back");
 				} else
 					backCount = 0;
 			}
+		}
+
+		if(rightCount > 10 && leftCount > 10 && upCount > 10 && downCount > 10 && frontCount > 10 && backCount > 10){
+			winScreen.WinTheGame ();
 		}
 		
 	}

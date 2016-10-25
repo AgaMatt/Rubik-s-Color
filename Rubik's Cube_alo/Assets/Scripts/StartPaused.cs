@@ -4,7 +4,7 @@ using System.Collections;
 public class StartPaused : MonoBehaviour
 {
 
-	bool pause;
+//	bool pause;
 	public GameObject pauseManager;
 	public bool depoisDoStart;
 	void Start ()
@@ -12,7 +12,7 @@ public class StartPaused : MonoBehaviour
 		depoisDoStart = false;
 		Time.timeScale = 0;
 		pauseManager.gameObject.SetActive (true);
-		pause = true;
+		//pause = true;
 	}
 
 	public void StartButton ()
@@ -20,6 +20,6 @@ public class StartPaused : MonoBehaviour
 		
 		Time.timeScale = 1;
 		pauseManager.gameObject.SetActive (false);
-		pause = false;
+		//pause = false;
 	}
 }

@@ -3,14 +3,15 @@ using System.Collections;
 
 public class CheckClickOnQuad : MonoBehaviour {
 	public MoveTheCube moveCube;
-	public StartPaused depoisStart;
+	StartPaused depoisStart;
 	MeshRenderer corQuad;
 	Color quadColor;
 	Color blue, orange, yellow, green, white, red;
 	public static bool canPaint, alrdyHaveColor;
+
 	// Use this for initialization
 	void Start () {
-		
+		depoisStart = GameObject.FindObjectOfType<StartPaused> ();
 		alrdyHaveColor = false;
 		//print (alrdyHaveColor + "check");
 		canPaint = true;
