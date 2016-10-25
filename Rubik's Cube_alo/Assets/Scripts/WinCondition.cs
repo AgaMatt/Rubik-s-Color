@@ -7,10 +7,10 @@ public class WinCondition : MonoBehaviour {
 
 
 
-	GameObject[] rightSons, leftSons, upSons, downSons, frontSons, backSons ;
-	Color[] rightColor, leftColor, upColor, downColor, frontColor, backColor;
-	int blueCount, yellowCount, redCount, whiteColor, orangeColor, greenCount;
-	Color cBlue, cYellow, cRed, cWhite, cOrange, cGreen;
+	public GameObject[] rightSons, leftSons, upSons, downSons, frontSons, backSons ;
+	public Color[] rightColor, leftColor, upColor, downColor, frontColor, backColor;
+	public int rightCount, leftCount, upCount, downCount, frontCount, backCount;
+	Color cBlue, cYellow, cRed, cWhite, cOrange, cGreen, colorZ, colorX, colorC, colorV, colorB, colorN;
 	List<GameObject> frontList, backList, upList, downList, leftList, rightList;
 
 	void Start()
@@ -22,12 +22,12 @@ public class WinCondition : MonoBehaviour {
 		leftList = new List<GameObject> ();
 		rightList = new List<GameObject> ();*/
 
-		rightColor = new Color[8];
-		leftColor = new Color[8];
-		upColor = new Color[8];
-		downColor = new Color[8];
-		frontColor = new Color[8];
-		backColor = new Color[8];
+		rightColor = new Color[9];
+		leftColor = new Color[9];
+		upColor = new Color[9];
+		downColor = new Color[9];
+		frontColor = new Color[9];
+		backColor = new Color[9];
 
 		cBlue = new Color (0, 0.208f, 1.000f, 1.000f);
 		cYellow = new Color (1f,0.110f, 0.125f, 1f);
@@ -41,6 +41,7 @@ public class WinCondition : MonoBehaviour {
 	void Update()
 	{
 		RunAllFathers ();
+		CheckForWin ();
 	}
 
 
@@ -57,10 +58,11 @@ public class WinCondition : MonoBehaviour {
 	void FatherRight()
 	{
 		rightSons = GameObject.FindGameObjectsWithTag ("Right Side");
-		for(int i =0; i<8; i++)
+		for(int i =0; i<9; i++)
 		{
 			//rightSons [i] = rightList [i];
 			rightColor [i] = rightSons [i].GetComponent<MeshRenderer> ().material.color;
+			//print (rightColor[i]);
 		}
 
 	}
@@ -68,7 +70,7 @@ public class WinCondition : MonoBehaviour {
 	void FatherLeft()
 	{
 		leftSons = 	GameObject.FindGameObjectsWithTag ("Left Side");
-		for(int i =0; i<8; i++)
+		for(int i =0; i<9; i++)
 		{
 			//leftSons [i] = leftList [i];
 			leftColor [i] = leftSons [i].GetComponent<MeshRenderer> ().material.color;
@@ -78,7 +80,7 @@ public class WinCondition : MonoBehaviour {
 	void FatherUp()
 	{
 		upSons = GameObject.FindGameObjectsWithTag ("Up Side");
-		for (int i = 0; i < 8; i++) {
+		for (int i = 0; i < 9; i++) {
 			//upSons[i] = upList[i];
 			upColor [i] = upSons [i].GetComponent<MeshRenderer> ().material.color;
 			//print (upColor[i]);
@@ -102,7 +104,7 @@ public class WinCondition : MonoBehaviour {
 	void FatherDown()
 	{
 		downSons = GameObject.FindGameObjectsWithTag ("Down Side");
-		for(int i =0; i < 8; i++)
+		for(int i =0; i < 9; i++)
 		{
 			//downSons [i] = downList [i];
 			downColor [i] = downSons [i].GetComponent<MeshRenderer> ().material.color;
@@ -112,7 +114,7 @@ public class WinCondition : MonoBehaviour {
 	void FatherFront()
 	{
 		frontSons = GameObject.FindGameObjectsWithTag ("Front Side");
-		for(int i =0; i<8; i++)
+		for(int i =0; i<9; i++)
 		{
 			//frontSons [i] = frontList [i];
 			frontColor [i] = frontSons [i].GetComponent<MeshRenderer> ().material.color;
@@ -122,11 +124,83 @@ public class WinCondition : MonoBehaviour {
 	void FatherBack ()
 	{
 		backSons = GameObject.FindGameObjectsWithTag ("Back Side");
-		for(int i =0; i<8; i++)
+		for(int i =0; i<9; i++)
 		{
 			//backSons [i] = backList [i];
 			backColor [i] = backSons [i].GetComponent<MeshRenderer> ().material.color;
 		}
+	}
+	void CheckForWin()
+	{
+		colorZ = rightColor [0];
+		colorX = leftColor [0];
+		colorC = upColor [0];
+		colorV = downColor [0];
+		colorB = frontColor [0];
+		colorN = backColor [0];
+		if (colorZ != colorX && colorZ != colorC && colorZ != colorV && colorZ != colorB && colorZ != colorN) {
+			for (int i = 0; i < 9; i++) {
+				if (rightColor [i] == colorZ) {
+					rightCount++;
+					//print ("tudo certo Right");
+				} else
+					rightCount = 0;
+			}
+		}
+
+			if(colorX != colorZ && colorX != colorC && colorX != colorV && colorX != colorB && colorX != colorN){
+				for(int i =0; i < 9; i++){
+				if (leftColor [i] == colorX) {
+					leftCount++;
+					//print ("tudo certo Left");
+				} else
+					leftCount = 0;
+				}
+
+			}
+
+		if(colorC != colorX && colorC != colorZ && colorC != colorV && colorC != colorB && colorC != colorN){
+			for(int i =0; i < 9; i++){
+				if (upColor [i] == colorC) {
+					upCount++;
+					//print ("tudo certo Up");
+				} else
+					upCount = 0;
+			}
+		}
+
+		if(colorV != colorX && colorV != colorC && colorV != colorZ && colorV != colorB && colorV != colorN){
+			for(int i =0; i < 9; i++){
+				if(downColor[i] == colorV)
+				{
+					downCount++;
+				//	print ("tudo certo Down");
+				}else
+				downCount = 0;
+			}
+		}
+
+		if(colorB != colorX && colorB != colorC && colorB != colorV && colorB != colorZ && colorB != colorN){
+			for(int i =0; i < 9; i++){
+				if(frontColor[i] == colorB)
+				{
+					frontCount++;
+					//print ("tudo certo Front");
+				}else
+					frontCount = 0;
+			}
+		}
+
+		if(colorN != colorX && colorN != colorC && colorN != colorV && colorN != colorB && colorN != colorZ){
+			for(int i =0; i < 9; i++){
+				if (backColor [i] == colorN) {
+					backCount++;
+					//print ("tudo certo Back");
+				} else
+					backCount = 0;
+			}
+		}
+		
 	}
 
 }
