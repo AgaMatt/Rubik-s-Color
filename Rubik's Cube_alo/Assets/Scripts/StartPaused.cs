@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using UnityEngine.SceneManagement;
 public class StartPaused : MonoBehaviour
 {
 
@@ -21,5 +21,6 @@ public class StartPaused : MonoBehaviour
 		Time.timeScale = 1;
 		pauseManager.gameObject.SetActive (false);
 		//pause = false;
+		SceneManager.LoadScene ("Game Restart");
 	}
 }

@@ -10,7 +10,7 @@ public class WinCondition : MonoBehaviour {
 	public GameObject[] rightSons, leftSons, upSons, downSons, frontSons, backSons ;
 	public Color[] rightColor, leftColor, upColor, downColor, frontColor, backColor;
 	public int rightCount, leftCount, upCount, downCount, frontCount, backCount;
-	Color cBlue, cYellow, cRed, cWhite, cOrange, cGreen, colorZ, colorX, colorC, colorV, colorB, colorN;
+	Color cBlue, cYellow, cRed, cWhite, cOrange, cGreen, cGray, colorZ, colorX, colorC, colorV, colorB, colorN;
 	List<GameObject> frontList, backList, upList, downList, leftList, rightList;
 	WinScreen winScreen;
 
@@ -36,6 +36,7 @@ public class WinCondition : MonoBehaviour {
 		cWhite = new Color (1f,1f,1f,1f);
 		cOrange = new Color (1,0.522f,0.004f, 1f);
 		cGreen = new Color (0.180f,0.773f,0.004f,1f);
+		cGray = new Color (0.384f, 0.384f, 0.384f, 1f);
 
 	}
 
@@ -63,7 +64,7 @@ public class WinCondition : MonoBehaviour {
 		{
 			//rightSons [i] = rightList [i];
 			rightColor [i] = rightSons [i].GetComponent<MeshRenderer> ().material.color;
-			//print (rightColor[i]);
+			print (rightColor[i]);
 		}
 
 	}

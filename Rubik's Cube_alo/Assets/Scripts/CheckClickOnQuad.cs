@@ -11,6 +11,7 @@ public class CheckClickOnQuad : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		GetComponent<MeshRenderer> ().material.color = new Color (0.384f, 0.384f, 0.384f, 1f);
 		depoisStart = GameObject.FindObjectOfType<StartPaused> ();
 		alrdyHaveColor = false;
 		//print (alrdyHaveColor + "check");

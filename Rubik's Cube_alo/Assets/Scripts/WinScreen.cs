@@ -9,6 +9,7 @@ public class WinScreen : MonoBehaviour {
 
 	void Start ()
 	{
+		
 		Time.timeScale = 1;
 		winManager.gameObject.SetActive (false);
 		//pause = false;
@@ -27,7 +28,7 @@ public class WinScreen : MonoBehaviour {
 		Time.timeScale = 1;
 		winManager.gameObject.SetActive (false);
 	//	pause = false;
-		SceneManager.LoadScene ("Game");
+		SceneManager.LoadScene ("Game Restart");
 	}
 
 	public void CloseButton()
