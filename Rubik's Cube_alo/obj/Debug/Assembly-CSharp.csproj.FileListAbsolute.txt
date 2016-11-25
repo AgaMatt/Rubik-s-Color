@@ -84,3 +84,5 @@ D:\Program Files (x86)\Documentos\Facul\Motores\Rubik-s-Color\Rubik-s-Color\Rubi
 D:\Program Files (x86)\Documentos\Facul\Motores\Rubik-s-Color\Rubik-s-Color\Rubik-s-Color\Rubik's Cube_alo\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
 D:\Program Files (x86)\Documentos\Facul\Motores\Rubik-s-Color\Rubik-s-Color\Rubik-s-Color\Rubik's Cube_alo\obj\Debug\Assembly-CSharp.dll
 D:\Program Files (x86)\Documentos\Facul\Motores\Rubik-s-Color\Rubik-s-Color\Rubik-s-Color\Rubik's Cube_alo\obj\Debug\Assembly-CSharp.pdb
+C:\Users\User\Desktop\Documentos\Facul\Motores\Rubik's Color\Rubik-s-Color\Rubik-s-Color\Rubik's Cube_alo\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
+C:\Users\User\Desktop\Documentos\Facul\Motores\Rubik's Color\Rubik-s-Color\Rubik-s-Color\Rubik's Cube_alo\obj\Debug\Assembly-CSharp.dll

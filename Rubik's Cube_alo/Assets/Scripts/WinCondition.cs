@@ -64,7 +64,7 @@ public class WinCondition : MonoBehaviour {
 		{
 			//rightSons [i] = rightList [i];
 			rightColor [i] = rightSons [i].GetComponent<MeshRenderer> ().material.color;
-			print (rightColor[i]);
+//			print (rightColor[i]);
 		}
 
 	}
