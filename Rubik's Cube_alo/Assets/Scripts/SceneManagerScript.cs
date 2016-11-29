@@ -17,11 +17,16 @@ public class SceneManagerScript : MonoBehaviour
 
 	public void Return ()
 	{
+		var a = FindObjectOfType<AudioSource> ();
+		Destroy (a);
 		SceneManager.LoadScene ("MainMenu");
 	}
 
 	public void Restart ()
 	{
+		var a = FindObjectOfType<AudioSource> ();
+		Destroy (a);
 		SceneManager.LoadScene ("Game Restart");
 	}
+
 }
