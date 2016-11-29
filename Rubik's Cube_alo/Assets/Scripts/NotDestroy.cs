@@ -7,9 +7,5 @@ public class NotDestroy : MonoBehaviour {
 	void Start () {
 		DontDestroyOnLoad (gameObject);
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
 }
